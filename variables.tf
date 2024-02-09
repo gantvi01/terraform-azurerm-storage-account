@@ -34,12 +34,6 @@ variable "account_tier" {
 variable "access_tier" {
   description = "Defines the access tier for BlobStorage, FileStorage and StorageV2 accounts"
   type        = string
-  default     = "Hot"
-
-  validation {
-    condition     = (contains(["hot", "cool"], lower(var.access_tier)))
-    error_message = "The account_tier must be either \"Hot\" or \"Cool\"."
-  }
 }
 
 variable "replication_type" {
